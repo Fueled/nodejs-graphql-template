@@ -1,0 +1,45 @@
+{
+  "name": "sample-project",
+  "version": "0.1.0",
+  "description": "",
+  "main": "src/server.js",
+  "scripts": {
+    "build-ts": "tsc",
+    "build": "npm run build-ts && npm run lint",
+    "serve": "node dist/server.js",
+    "start": "npm run serve",
+    "format": "prettier --write .",
+    "lint": "tsc --noEmit && eslint \"**/*.{js,ts}\" --quiet --fix",
+    "watch-node": "nodemon dist/server.js",
+    "watch-ts": "tsc -w",
+    "watch": "concurrently -k -p \"[{name}]\" -n \"TypeScript,Node\" -c \"cyan.bold,green.bold\" \"npm run watch-ts\" \"npm run watch-node\""
+  },
+  "engines": {
+    "node": ">=16.0.0",
+    "npm": ">=7.0.0"
+  },
+  "author": "",
+  "dependencies": {
+    "dotenv": "10.0.0",
+    "errorhandler": "1.5.1",
+    "express": "4.17.1",
+    "getenv": "1.0.0",
+    "lodash.merge": "^4.6.2",
+    "winston": "3.3.3"
+  },
+  "devDependencies": {
+    "@types/errorhandler": "1.5.0",
+    "@types/eslint": "7.2.13",
+    "@types/express": "4.17.12",
+    "@types/getenv": "1.0.0",
+    "@types/lodash.merge": "4.6.6",
+    "@types/winston": "2.4.4",
+    "@typescript-eslint/eslint-plugin": "4.27.0",
+    "@typescript-eslint/parser": "4.27.0",
+    "concurrently": "6.2.0",
+    "eslint": "7.29.0",
+    "nodemon": "2.0.7",
+    "prettier": "2.3.1",
+    "typescript": "4.3.4"
+  }
+}
