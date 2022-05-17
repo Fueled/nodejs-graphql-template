@@ -13,7 +13,8 @@
     "format": "prettier --write .",
     "lint": "tsc --noEmit && eslint \"**/*.{js,ts}\" --quiet --fix",
     "migrate": "prisma migrate deploy",
-    "test": "jest"
+    "test": "jest",
+    "tsc:validate": "tsc --noEmit"
   },
   "engines": {
     "node": ">=16.0.0",
