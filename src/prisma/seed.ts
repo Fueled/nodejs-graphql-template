@@ -4,7 +4,7 @@ import { Prisma, PrismaClient } from "@prisma/client";
 const prisma = new PrismaClient();
 const today = new Date();
 
-const questionnaire: Prisma.[] = [{
+const questionnaire: any[] = [{
   name: "Membership Form",
 }, {
   name: "Fueled Survey",
