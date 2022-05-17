@@ -1,0 +1,36 @@
+version: "3.9"
+
+services:
+  db:
+    container_name: fueled_assignment_postgres
+    image: postgres
+    volumes:
+      - ./data/db:/var/lib/postgresql/data
+    environment:
+      - POSTGRES_DB=fueled-assignment-db
+      - POSTGRES_USER=postgres
+      - POSTGRES_PASSWORD=postgres
+    ports:
+      - "5432:5432"
+  
+  web:
+    container_name: fueled_assignment_app
+    build:
+      context: .
+      dockerfile: Dockerfile
+      target: base
+    volumes:
+      - ".:/var/app"
+    expose:
+      - "8000"
+    ports:
+      - "8000:8000"
+    depends_on:
+      - db
+    environment:
+      - DATABASE_URL=postgres://postgres:postgres@db/fueled-assignment-db
+    command: npm run dev
+
+  redis:
+    container_name: fueled_assignment_redis
+    image: redis:latest

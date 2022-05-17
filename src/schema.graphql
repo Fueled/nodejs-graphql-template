@@ -1,0 +1,13 @@
+scalar DateTime
+scalar UUID
+
+type Questionnaire {
+  id: UUID!
+  name: String
+  createdAt: DateTime!
+  updatedAt: DateTime!
+}
+
+type Query {
+  getQuestionnaire: [Questionnaire]!
+}
