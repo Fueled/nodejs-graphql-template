@@ -1,4 +1,4 @@
-FROM node:16 as base
+FROM node:16-alpine as base
 
 WORKDIR /var/app
 
@@ -8,14 +8,24 @@ RUN npm install
 
 COPY . .
 
-# Generate the prisma client in the docker OS
+RUN npm run build
 RUN npx prisma generate
 
 # Production step
 
-FROM base as production
+FROM node:16-alpine as production
 
-ENV NODE_PATH=./dist
-RUN npm run build
+ARG NODE_ENV=production
+ENV NODE_ENV=${NODE_ENV}
 
-ENTRYPOINT [ "nodemon", "/var/app/src/server.ts" ]
+WORKDIR /var/app
+
+COPY package*.json ./
+
+RUN npm install --production
+
+COPY . .
+
+COPY --from=base /var/app/dist ./dist
+
+ENTRYPOINT ["nodemon", "/var/app/dist/server.js"]
