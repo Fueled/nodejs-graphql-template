@@ -6,7 +6,6 @@ import config from "./config/config";
 import context from "./context";
 import resolvers from "./resolvers";
 
-
 export default async (app: express.Application): Promise<void> => {
   const typeDefs = readFileSync(`${__dirname}/schema.graphql`).toString("utf-8");
 

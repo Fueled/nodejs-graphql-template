@@ -1,4 +1,4 @@
-import { Context } from "./utils/types";
+import { Context } from "./types";
 
 export default async ({ req, res }: any): Promise<Context> => {
 

@@ -3,8 +3,7 @@
   "version": "0.1.0",
   "description": "",
   "scripts": {
-    "build-ts": "tsc",
-    "build": "npm run clean && npm run build-ts && npm run copy-files && npm run lint",
+    "build": "npm run clean && npm run tsc:compile && npm run copy-files && npm run lint",
     "clean": "rimraf dist/",
     "copy-files": "copyfiles -u 1 src/**/*.graphql dist/",
     "generate-types": "graphql-codegen",
@@ -12,8 +11,8 @@
     "dev": "nodemon --config nodemon.json src/server.ts",
     "format": "prettier --write .",
     "lint": "tsc --noEmit && eslint \"**/*.{js,ts}\" --quiet --fix",
-    "migrate": "prisma migrate deploy",
     "test": "jest",
+    "tsc:compile": "tsc",
     "tsc:validate": "tsc --noEmit"
   },
   "engines": {
@@ -22,7 +21,6 @@
   },
   "author": "",
   "prisma": {
-    "schema": "src/prisma/schema.prisma",
     "seed": "ts-node src/prisma/seed.ts"
   },
   "dependencies": {
