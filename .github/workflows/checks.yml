@@ -3,7 +3,6 @@ name: Validate TypeScript & check code formatting
 # Triggered when code is pushed to any branch in a repository
 on:
   push:
-  pull_request:
   workflow_dispatch:
 
 # https://twitter.com/adamchainz/status/1485572084617121796?s=21
@@ -38,7 +37,7 @@ jobs:
         run: npm ci # npm ci is a CI environment specific installer https://stackoverflow.com/a/53325242
 
       - name: Validate TypeScript
-        run: num run tsc:validate
+        run: npm run tsc:validate
 
       - name: ESLint
         run: npm run lint
