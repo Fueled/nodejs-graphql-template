@@ -1,30 +1,19 @@
 import dotenv from "dotenv";
 import getenv from "getenv";
-import merge from "lodash.merge";
 
 dotenv.config();
 
-const baseConfig = {
+const config: { [key: string]: any } = {
   debug: getenv.bool("DEBUG", false),
   log_level: "error",
-  app: {
+  http: {
     host: getenv("HTTP_HOST", "localhost"),
     port: getenv.int("HTTP_PORT", 8000),
     schema: getenv("HTTP_SCHEMA", "http"),
   },
+  graphql: {
+    introspection: getenv.bool("GRAPHQL_INTROSPECTION_ENABLED", false),
+  },
 };
 
-const config: { [key: string]: any } = {
-  test: {
-    debug: false,
-  },
-  development: {
-    log_level: "debug",
-    debug: getenv.bool("DEBUG", true),
-  },
-  production: {},
-};
-
-const env: string = process.env.NODE_ENV || "development";
-
-export default merge(baseConfig, config[env]);
+export default { ...config };

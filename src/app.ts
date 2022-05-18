@@ -5,6 +5,7 @@ import config from "./config/config";
 const app: express.Application = express();
 
 // Express configuration
-app.set("port", config.app.port);
+// TODO: Is this needed?
+app.set("port", config.http.port);
 
 export default app;
