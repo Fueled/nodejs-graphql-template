@@ -14,10 +14,10 @@ export default async (app: express.Application): Promise<void> => {
     resolvers,
     context,
     plugins: [
-      // TODO: Should this remain enabled in prod?
       ApolloServerPluginLandingPageGraphQLPlayground(),
+      // TODO: May need drain HTTP server plugin
     ],
-    introspection: config.graphql.isIntrospectionEnabled,
+    introspection: config.graphql.introspectionEnabled,
   });
 
   await server.start();
