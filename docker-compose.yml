@@ -20,7 +20,7 @@ services:
   postgres:
     image: postgres:14
     volumes:
-      - ./data/postgres:/var/lib/postgresql/data
+      - pgdata:/var/lib/postgresql/data
     environment:
       - POSTGRES_DB=${PG_DB}
       - POSTGRES_USER=${PG_USER}
@@ -37,3 +37,6 @@ services:
 
 networks:
   app_network:
+
+volumes:
+  pgdata:
