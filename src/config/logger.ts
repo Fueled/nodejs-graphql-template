@@ -4,7 +4,7 @@ import config from "./config";
 const options: winston.LoggerOptions = {
   transports: [
     new winston.transports.Console({
-      level: config.log_level,
+      level: config.logLevel,
     }),
     new winston.transports.File({ filename: "debug.log", level: "debug" }),
   ],

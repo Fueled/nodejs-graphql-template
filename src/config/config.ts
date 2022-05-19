@@ -3,16 +3,37 @@ import getenv from "getenv";
 
 dotenv.config();
 
-const config: { [key: string]: any } = {
+type LogLevel = "debug" | "error";  // TBC...
+type HttpSchema = "http" | "https";
+
+export type Config = {
+  debug: boolean;
+  logLevel: LogLevel;
+  http: {
+    host: string;
+    port: number;
+    schema: HttpSchema;
+  };
+  graphql: {
+    introspectionEnabled: boolean;
+  }
+};
+
+const httpSchema = getenv("HTTP_SCHEMA", "http");
+if (!["http", "https"].includes(httpSchema)) {
+  throw new Error(`Invalid HTTP schema provided - ${httpSchema}`);
+}
+
+const config: Config = {
   debug: getenv.bool("DEBUG", false),
-  log_level: "error",
+  logLevel: "error",
   http: {
     host: getenv("HTTP_HOST", "localhost"),
     port: getenv.int("HTTP_PORT", 8000),
-    schema: getenv("HTTP_SCHEMA", "http"),
+    schema: httpSchema as HttpSchema,
   },
   graphql: {
-    introspection: getenv.bool("GRAPHQL_INTROSPECTION_ENABLED", false),
+    introspectionEnabled: getenv.bool("GRAPHQL_INTROSPECTION_ENABLED", false),
   },
 };
 
