@@ -1,11 +1,11 @@
 {
-  "name": "fueled-assignment",
-  "version": "0.1.0",
+  "name": "fueled-graphql-starter",
+  "version": "0.0.1",
   "description": "",
   "scripts": {
-    "build": "npm run clean && npm run ts:build && npm run copy-files && npm run lint",
-    "clean": "rimraf dist/",
-    "copy-files": "copyfiles -u 1 src/**/*.graphql dist/",
+    "prebuild": "rimraf dist/",
+    "build": "npm run prebuild && npm run ts:build && npm run copy-files && npm run lint",
+    "copy-files": "copyfiles -u 1 src/**/*.{graphql,gql} dist/",
     "generate-types": "graphql-codegen",
     "start": "node dist/server.js",
     "dev": "nodemon --config nodemon.json src/server.ts",
@@ -32,7 +32,6 @@
     "@prisma/client": "3.11.1",
     "apollo-server-express": "3.6.4",
     "bcryptjs": "2.4.3",
-    "copyfiles": "2.4.1",
     "date-fns": "2.28.0",
     "dotenv": "10.0.0",
     "errorhandler": "1.5.1",
@@ -58,6 +57,7 @@
     "@typescript-eslint/eslint-plugin": "4.27.0",
     "@typescript-eslint/parser": "4.27.0",
     "concurrently": "6.2.0",
+    "copyfiles": "2.4.1",
     "eslint": "7.29.0",
     "jest": "27.5.1",
     "nodemon": "2.0.7",
@@ -65,6 +65,6 @@
     "prisma": "3.11.1",
     "ts-jest": "27.1.3",
     "ts-node": "10.7.0",
-    "typescript": "4.3.4"
+    "typescript": "4.5.5"
   }
 }
