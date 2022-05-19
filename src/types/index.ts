@@ -1,5 +1,6 @@
+import express from "express";
+
 export type Context = {
-  req: any;
-  res: any;
-  user?: any | null;
+  req: express.Request;
+  res: express.Response;
 };

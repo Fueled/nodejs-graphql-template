@@ -1,7 +1,14 @@
+import express from "express";
 import { Context } from "./types";
 
-export default async ({ req, res }: any): Promise<Context> => {
+type ContextFnArgs = {
+  req: express.Request,
+  res: express.Response,
+};
 
+export default async (
+  { req, res }: ContextFnArgs
+): Promise<Context> => {
   const context: Context = {
     req,
     res,
