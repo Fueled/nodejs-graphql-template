@@ -1,0 +1,10 @@
+generator client {
+  provider        = "prisma-client-js"
+  binaryTargets   = ["native", "darwin", "darwin-arm64", "debian-openssl-1.1.x"]
+  previewFeatures = ["interactiveTransactions"]
+}
+
+datasource db {
+  provider = "postgresql"
+  url      = env("DATABASE_URL")
+}

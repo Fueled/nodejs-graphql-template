@@ -1,30 +1,40 @@
 import dotenv from "dotenv";
 import getenv from "getenv";
-import merge from "lodash.merge";
 
 dotenv.config();
 
-const baseConfig = {
+type LogLevel = "debug" | "error";  // TBC...
+type HttpSchema = "http" | "https";
+
+export type Config = {
+  debug: boolean;
+  logLevel: LogLevel;
+  http: {
+    host: string;
+    port: number;
+    schema: HttpSchema;
+  };
+  graphql: {
+    introspectionEnabled: boolean;
+  }
+};
+
+const httpSchema = getenv("HTTP_SCHEMA", "http");
+if (!["http", "https"].includes(httpSchema)) {
+  throw new Error(`Invalid HTTP schema provided - ${httpSchema}`);
+}
+
+const config: Config = {
   debug: getenv.bool("DEBUG", false),
-  log_level: "error",
-  app: {
+  logLevel: "error",
+  http: {
     host: getenv("HTTP_HOST", "localhost"),
     port: getenv.int("HTTP_PORT", 8000),
-    schema: getenv("HTTP_SCHEMA", "http"),
+    schema: httpSchema as HttpSchema,
+  },
+  graphql: {
+    introspectionEnabled: getenv.bool("GRAPHQL_INTROSPECTION_ENABLED", false),
   },
 };
 
-const config: { [key: string]: any } = {
-  test: {
-    debug: false,
-  },
-  development: {
-    log_level: "debug",
-    debug: getenv.bool("DEBUG", true),
-  },
-  production: {},
-};
-
-const env: string = process.env.NODE_ENV || "development";
-
-export default merge(baseConfig, config[env]);
+export default { ...config };

@@ -1,0 +1,42 @@
+version: "3.9"
+
+services:
+  app:
+    build:
+      context: .
+      dockerfile: ./Dockerfile
+      target: base
+    volumes:
+      - ".:/var/app"
+    expose:
+      - "8000"
+    ports:
+      - "8000:8000"
+    depends_on:
+      - postgres
+    environment:
+      - DATABASE_URL=postgres://postgres:${PG_USER}@${PG_PASSWORD}/${PG_DB}
+
+  postgres:
+    image: postgres:14
+    volumes:
+      - pgdata:/var/lib/postgresql/data
+    environment:
+      - POSTGRES_DB=${PG_DB}
+      - POSTGRES_USER=${PG_USER}
+      - POSTGRES_PASSWORD=${PG_PASSWORD}
+    ports:
+      - "5432:5432"
+    networks:
+      - app_network
+
+  redis:
+    image: redis:latest
+    networks:
+      - app_network
+
+networks:
+  app_network:
+
+volumes:
+  pgdata:

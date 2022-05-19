@@ -1,6 +1,6 @@
-# [Sample Project]
+# Fueled Assignment
 
-[@TODO: add project description here]
+This repo contains the starter code for Fueled Assignment in NodeJS + TypeScript. Using Postgres as the primary database.
 
 ## Requirements
 
@@ -19,9 +19,45 @@
 
 ## Get Started
 
+The following will install all necessary packages and run the app under development mode which uses `nodemon` for reloading the build when changes are made.
+
 ```
 npm install
-npm run start
+npm run dev
+```
+
+## Docker Local
+
+A Dockerfile is available to run the backend services in a container exposed through ports. The Docker container
+includes the hot reloading Node application, PostgresSQL database, and Redis for caching.
+
+The three services are available under the following:
+
+```
+app: fueled_assignment
+  fueled_assignment_app        // Node application
+  fueled_assignment_redis      // Redis server
+  fueled_assignment_postgres   // PostgreSQL database
+```
+
+To build and run the Docker container, ensure you have the Docker CLI available, and optionally Docker Desktop.
+
+To build the Docker container:
+
+```
+docker compose build
+```
+
+To start the Docker container:
+
+```
+docker compose up
+```
+
+To stop the Docker container:
+
+```
+docker compose down
 ```
 
 ## ESLint
@@ -44,3 +80,4 @@ npm run lint    // runs only ESLint
 Notice that ESLint is not a part of the main watch task.
 
 If you are interested in seeing ESLint feedback as soon as possible, I strongly recommend the [VS Code ESLint extension](https://marketplace.visualstudio.com/items?itemName=dbaeumer.vscode-eslint).
+
