@@ -29,7 +29,7 @@ jobs:
         run: npm ci # npm ci is a CI environment specific installer https://stackoverflow.com/a/53325242
 
       - name: Validate TypeScript
-        run: npm run tsc:validate
+        run: npm run ts:lint
 
       - name: ESLint
         run: npm run lint

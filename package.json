@@ -3,17 +3,18 @@
   "version": "0.1.0",
   "description": "",
   "scripts": {
-    "build": "npm run clean && npm run tsc:compile && npm run copy-files && npm run lint",
+    "build": "npm run clean && npm run ts:build && npm run copy-files && npm run lint",
     "clean": "rimraf dist/",
     "copy-files": "copyfiles -u 1 src/**/*.graphql dist/",
     "generate-types": "graphql-codegen",
     "start": "node dist/server.js",
     "dev": "nodemon --config nodemon.json src/server.ts",
     "format": "prettier --write .",
-    "lint": "tsc --noEmit && eslint \"**/*.{js,ts}\" --quiet --fix",
+    "lint": "eslint \"{src,apps,libs,test}/*.{js,ts}\"",
+    "lint:fix": "eslint \"{src,apps,libs,test}/*.{js,ts}\" --quiet --fix",
     "test": "jest",
-    "tsc:compile": "tsc",
-    "tsc:validate": "tsc --noEmit"
+    "ts:build": "tsc",
+    "ts:lint": "tsc --noEmit"
   },
   "engines": {
     "node": ">=16.0.0",
