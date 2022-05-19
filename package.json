@@ -25,10 +25,6 @@
     "seed": "ts-node src/prisma/seed.ts"
   },
   "dependencies": {
-    "@graphql-codegen/add": "3.1.1",
-    "@graphql-codegen/core": "2.5.1",
-    "@graphql-codegen/typescript": "2.4.8",
-    "@graphql-codegen/typescript-resolvers": "2.6.1",
     "@prisma/client": "3.11.1",
     "apollo-server-express": "3.6.4",
     "bcryptjs": "2.4.3",
@@ -38,13 +34,10 @@
     "express": "4.17.1",
     "getenv": "1.0.0",
     "graphql": "16.3.0",
-    "jsonwebtoken": "8.5.1",
-    "lodash.merge": "4.6.2",
     "rimraf": "3.0.2",
     "winston": "3.3.3"
   },
   "devDependencies": {
-    "@graphql-codegen/cli": "2.6.2",
     "@types/bcryptjs": "^2.4.2",
     "@types/errorhandler": "1.5.0",
     "@types/eslint": "7.2.13",
@@ -52,7 +45,6 @@
     "@types/getenv": "1.0.0",
     "@types/graphql": "14.5.0",
     "@types/jest": "27.4.1",
-    "@types/lodash.merge": "4.6.6",
     "@types/winston": "2.4.4",
     "@typescript-eslint/eslint-plugin": "4.27.0",
     "@typescript-eslint/parser": "4.27.0",
