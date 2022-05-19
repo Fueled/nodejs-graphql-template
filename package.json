@@ -27,8 +27,6 @@
   "dependencies": {
     "@prisma/client": "3.11.1",
     "apollo-server-express": "3.6.4",
-    "bcryptjs": "2.4.3",
-    "date-fns": "2.28.0",
     "dotenv": "10.0.0",
     "errorhandler": "1.5.1",
     "express": "4.17.1",
