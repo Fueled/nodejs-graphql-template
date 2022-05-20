@@ -2,8 +2,8 @@ import express from "express";
 import { Context } from "./types";
 
 type ContextFnArgs = {
-  req: express.Request,
-  res: express.Response,
+  req: express.Request;
+  res: express.Response;
 };
 
 export default async (
