@@ -115,10 +115,10 @@
       }
     ],
 
-    // Warn against explicit `any` types.
+    // Disallow explicit `any` types. Use `unknown` instead.
     // https://typescript-eslint.io/rules/no-explicit-any
     "@typescript-eslint/no-explicit-any": [
-      "warn",
+      "error",
       {
         "ignoreRestArgs": true
       }
