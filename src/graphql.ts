@@ -22,5 +22,5 @@ export default async (app: express.Application): Promise<void> => {
 
   await server.start();
 
-  server.applyMiddleware({app});
+  server.applyMiddleware({ app });
 };

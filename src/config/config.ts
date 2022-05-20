@@ -16,7 +16,7 @@ export type Config = {
   };
   graphql: {
     introspectionEnabled: boolean;
-  }
+  };
 };
 
 const httpSchema = getenv("HTTP_SCHEMA", "http");

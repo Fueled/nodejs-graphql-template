@@ -9,7 +9,7 @@
     "generate-types": "graphql-codegen",
     "start": "node dist/server.js",
     "dev": "nodemon --config nodemon.json src/server.ts",
-    "format": "prettier --write .",
+    "format": "prettier --write \"{src,apps,libs,test}/*.{js,ts}\"",
     "lint": "eslint \"{src,apps,libs,test}/*.{js,ts}\"",
     "lint:fix": "eslint \"{src,apps,libs,test}/*.{js,ts}\" --quiet --fix",
     "test": "jest",

@@ -6,9 +6,7 @@ type ContextFnArgs = {
   res: express.Response;
 };
 
-export default async (
-  { req, res }: ContextFnArgs
-): Promise<Context> => {
+export default async ({ req, res }: ContextFnArgs): Promise<Context> => {
   const context: Context = {
     req,
     res,

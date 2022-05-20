@@ -14,9 +14,12 @@
 
     // Enforce T[] syntax for arrays over Array<T>.
     // https://typescript-eslint.io/rules/array-type
-    "@typescript-eslint/array-type": ["error", {
-      "default": "array"
-    }],
+    "@typescript-eslint/array-type": [
+      "error",
+      {
+        "default": "array"
+      }
+    ],
 
     // Enforce spacing around arrow function's arrow.
     "arrow-spacing": "error",
@@ -24,16 +27,19 @@
     // Enforce comma dangle everywhere, except for function definitions.
     // https://typescript-eslint.io/rules/comma-dangle
     "comma-dangle": "off",
-    "@typescript-eslint/comma-dangle": ["error", {
-      "arrays": "always-multiline",
-      "enums": "always-multiline",
-      "generics": "always-multiline",
-      "objects": "always-multiline",
-      "tuples": "always-multiline",
-      "imports": "always-multiline",
-      "exports": "always-multiline",
-      "functions": "never"
-    }],
+    "@typescript-eslint/comma-dangle": [
+      "error",
+      {
+        "arrays": "always-multiline",
+        "enums": "always-multiline",
+        "generics": "always-multiline",
+        "objects": "always-multiline",
+        "tuples": "always-multiline",
+        "imports": "always-multiline",
+        "exports": "always-multiline",
+        "functions": "never"
+      }
+    ],
 
     // Enforce comma spacing.
     // https://typescript-eslint.io/rules/comma-spacing
@@ -42,11 +48,14 @@
 
     // Enforce function return types.
     // https://typescript-eslint.io/rules/explicit-function-return-type
-    "@typescript-eslint/explicit-function-return-type": ["error", {
-      "allowExpressions": true,
-      "allowHigherOrderFunctions": true,
-      "allowTypedFunctionExpressions": true
-    }],
+    "@typescript-eslint/explicit-function-return-type": [
+      "error",
+      {
+        "allowExpressions": true,
+        "allowHigherOrderFunctions": true,
+        "allowTypedFunctionExpressions": true
+      }
+    ],
 
     // Enforce no spacing for function calls.
     "func-call-spacing": "off",
@@ -67,7 +76,6 @@
         "SwitchCase": 1
       }
     ],
-
 
     // Enforce keyword spacing.
     // https://typescript-eslint.io/rules/keyword-spacing
@@ -93,22 +101,28 @@
 
     // Set delimiter rules for types and interfaces.
     // https://typescript-eslint.io/rules/member-delimiter-style
-    "@typescript-eslint/member-delimiter-style": ["error", {
-      "multiline": {
-        "delimiter": "semi",
-        "requireLast": true
-      },
-      "singleline": {
-        "delimiter": "semi",
-        "requireLast": false
+    "@typescript-eslint/member-delimiter-style": [
+      "error",
+      {
+        "multiline": {
+          "delimiter": "semi",
+          "requireLast": true
+        },
+        "singleline": {
+          "delimiter": "semi",
+          "requireLast": false
+        }
       }
-    }],
+    ],
 
     // Warn against explicit `any` types.
     // https://typescript-eslint.io/rules/no-explicit-any
-    "@typescript-eslint/no-explicit-any": ["warn", {
-      "ignoreRestArgs": true
-    }],
+    "@typescript-eslint/no-explicit-any": [
+      "warn",
+      {
+        "ignoreRestArgs": true
+      }
+    ],
 
     // Restrict use of labels and with statements.
     // https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Statements/with
@@ -142,31 +156,44 @@
 
     // Enforce consistency for line breaks in object definitions.
     // https://eslint.org/docs/rules/object-curly-newline
-    "object-curly-newline": ["error",
+    "object-curly-newline": [
+      "error",
       {
         "multiline": true,
         "consistent": true
       }
     ],
 
+    // Enforce consistent curly bracket spacing.
+    // https://typescript-eslint.io/rules/object-curly-spacing
+    "object-curly-spacing": "off",
+    "@typescript-eslint/object-curly-spacing": ["error", "always"],
+
     // Enforce double quotes.
     // https://typescript-eslint.io/rules/quotes
     "quotes": "off",
-    "@typescript-eslint/quotes": ["error", "double", {
-      "avoidEscape": true,
-      "allowTemplateLiterals": true
-    }],
+    "@typescript-eslint/quotes": [
+      "error",
+      "double",
+      {
+        "avoidEscape": true,
+        "allowTemplateLiterals": true
+      }
+    ],
 
     // Restrict template expressions to allow for string & number types only.
     // Other types must be checked explicitly.
     // https://typescript-eslint.io/rules/restrict-template-expressions
-    "@typescript-eslint/restrict-template-expressions": ["error", {
-      "allowNumber": true,
-      "allowBoolean": false,
-      "allowAny": false,
-      "allowNullish": false,
-      "allowRegExp": false
-    }],
+    "@typescript-eslint/restrict-template-expressions": [
+      "error",
+      {
+        "allowNumber": true,
+        "allowBoolean": false,
+        "allowAny": false,
+        "allowNullish": false,
+        "allowRegExp": false
+      }
+    ],
 
     // Enforce use of semi-columns.
     // https://typescript-eslint.io/rules/semi
@@ -176,11 +203,14 @@
     // Set spacing rules around functions.
     // https://typescript-eslint.io/rules/space-before-function-paren
     "space-before-function-paren": "off",
-    "@typescript-eslint/space-before-function-paren": ["error", {
-      "anonymous": "never",
-      "named": "never",
-      "asyncArrow": "always"
-    }],
+    "@typescript-eslint/space-before-function-paren": [
+      "error",
+      {
+        "anonymous": "never",
+        "named": "never",
+        "asyncArrow": "always"
+      }
+    ],
 
     // Consistent spacing for type annotations.
     // https://typescript-eslint.io/rules/type-annotation-spacing
