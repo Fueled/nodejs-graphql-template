@@ -1,21 +1,172 @@
 {
   "parser": "@typescript-eslint/parser",
   "extends": ["plugin:@typescript-eslint/recommended"],
+  "plugins": ["@typescript-eslint"],
   "parserOptions": {
     "ecmaVersion": 2018,
     "sourceType": "module"
   },
   "rules": {
-    "semi": ["error", "always"],
-    "quotes": ["error", "double"],
-    "@typescript-eslint/explicit-function-return-type": "off",
-    "@typescript-eslint/no-explicit-any": 1,
+    // Enforce no spacing after array opening bracket and before closing bracket.
+    // https://eslint.org/docs/rules/array-bracket-spacing
+    "array-bracket-spacing": ["error", "never"],
+
+    // Enforce T[] syntax for arrays over Array<T>.
+    // https://typescript-eslint.io/rules/array-type
+    "@typescript-eslint/array-type": ["error", {
+      "default": "array"
+    }],
+
+    // Enforce comma dangle everywhere, except for function definitions.
+    // https://typescript-eslint.io/rules/comma-dangle
+    "comma-dangle": "off",
+    "@typescript-eslint/comma-dangle": ["error", {
+      "arrays": "always-multiline",
+      "enums": "always-multiline",
+      "generics": "always-multiline",
+      "objects": "always-multiline",
+      "tuples": "always-multiline",
+      "imports": "always-multiline",
+      "exports": "always-multiline",
+      "functions": "never"
+    }],
+
+    // Set indent rules.
+    // https://typescript-eslint.io/rules/indent
+    "indent": "off",
+    "@typescript-eslint/indent": [
+      "error",
+      2,
+      {
+        "ignoredNodes": [
+          "FunctionExpression > .params[decorators.length > 0]",
+          "FunctionExpression > .params > :matches(Decorator, :not(:first-child))",
+          "ClassBody.body > PropertyDefinition[decorators.length > 0] > .key"
+        ],
+        "SwitchCase": 1
+      }
+    ],
+
+    // Enforce function return types.
+    // https://typescript-eslint.io/rules/explicit-function-return-type
+    "@typescript-eslint/explicit-function-return-type": ["error", {
+      "allowExpressions": true,
+      "allowHigherOrderFunctions": true,
+      "allowTypedFunctionExpressions": true
+    }],
+
+    // Enforce explicit return & argument types on exported functions & public class methods.
+    // https://typescript-eslint.io/rules/explicit-module-boundary-types
+    "@typescript-eslint/explicit-module-boundary-types": "error",
+
+    // Disallow explicit type declarations for numbers, strings or booleans.
+    // https://typescript-eslint.io/rules/no-inferrable-types
     "@typescript-eslint/no-inferrable-types": [
       "warn",
       {
-        "ignoreParameters": true
+        "ignoreParameters": true,
+        "ignoreProperties": true
       }
     ],
-    "@typescript-eslint/no-unused-vars": "warn"
+
+    // Prettier will convert this anyway. This is more of a fallback.
+    "max-len": ["error", 120, 2],
+
+    // Set delimiter rules for types and interfaces.
+    // https://typescript-eslint.io/rules/member-delimiter-style
+    "@typescript-eslint/member-delimiter-style": ["error", {
+      "multiline": {
+        "delimiter": "semi",
+        "requireLast": true
+      },
+      "singleline": {
+        "delimiter": "semi",
+        "requireLast": false
+      }
+    }],
+
+    // Warn against explicit `any` types.
+    // https://typescript-eslint.io/rules/no-explicit-any
+    "@typescript-eslint/no-explicit-any": ["warn", {
+      "ignoreRestArgs": true
+    }],
+
+    // Restrict use of labels and with statements.
+    // https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Statements/with
+    // https://eslint.org/docs/rules/no-restricted-syntax
+    "no-restricted-syntax": [
+      "error",
+      {
+        "selector": "LabeledStatement",
+        "message": "Labels are a form of GOTO; using them makes code confusing and hard to maintain and understand."
+      },
+      {
+        "selector": "WithStatement",
+        "message": "`with` is disallowed in strict mode because it makes code impossible to predict and optimize."
+      }
+    ],
+
+
+    // Disable using non-null assertions as they cancel the benefits of strict null-checking mode.
+    // Prefer explicit null checks for safety.
+    // https://typescript-eslint.io/rules/no-non-null-assertion
+    "@typescript-eslint/no-non-null-assertion": "error",
+
+    // Enforce no unused variables.
+    // https://typescript-eslint.io/rules/no-unused-vars
+    "no-unused-vars": "off",
+    "@typescript-eslint/no-unused-vars": "error",
+
+    // Warn against useless class constructors.
+    // https://typescript-eslint.io/rules/no-useless-constructor
+    "no-useless-constructor": "off",
+    "@typescript-eslint/no-useless-constructor": "warn",
+
+    // Enforce consistency for line breaks in object definitions.
+    // https://eslint.org/docs/rules/object-curly-newline
+    "object-curly-newline": ["error",
+      {
+        "multiline": true,
+        "consistent": true
+      }
+    ],
+
+    // Enforce double quotes.
+    // https://typescript-eslint.io/rules/quotes
+    "quotes": "off",
+    "@typescript-eslint/quotes": ["error", "double", {
+      "avoidEscape": true,
+      "allowTemplateLiterals": true
+    }],
+
+    // Restrict template expressions to allow for string & number types only.
+    // Other types must be checked explicitly.
+    // https://typescript-eslint.io/rules/restrict-template-expressions
+    "@typescript-eslint/restrict-template-expressions": ["error", {
+      "allowNumber": true,
+      "allowBoolean": false,
+      "allowAny": false,
+      "allowNullish": false,
+      "allowRegExp": false
+    }],
+
+    // Enforce use of semi-columns.
+    // https://typescript-eslint.io/rules/semi
+    "semi": "off",
+    "@typescript-eslint/semi": ["error", "always"],
+
+    // Require space before blocks.
+    // https://typescript-eslint.io/rules/space-before-blocks
+    "space-before-blocks": "off",
+    "@typescript-eslint/space-before-blocks": ["error"],
+
+    // Set spacing rules around functions.
+    // https://typescript-eslint.io/rules/space-before-function-paren
+    "space-before-function-paren": "off",
+    "@typescript-eslint/space-before-function-paren": ["error", {
+      "anonymous": "never",
+      "named": "never",
+      "asyncArrow": "always"
+    }]
   }
 }
