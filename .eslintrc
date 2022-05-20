@@ -18,6 +18,9 @@
       "default": "array"
     }],
 
+    // Enforce spacing around arrow function's arrow.
+    "arrow-spacing": "error",
+
     // Enforce comma dangle everywhere, except for function definitions.
     // https://typescript-eslint.io/rules/comma-dangle
     "comma-dangle": "off",
@@ -31,6 +34,23 @@
       "exports": "always-multiline",
       "functions": "never"
     }],
+
+    // Enforce comma spacing.
+    // https://typescript-eslint.io/rules/comma-spacing
+    "comma-spacing": "off",
+    "@typescript-eslint/comma-spacing": ["error"],
+
+    // Enforce function return types.
+    // https://typescript-eslint.io/rules/explicit-function-return-type
+    "@typescript-eslint/explicit-function-return-type": ["error", {
+      "allowExpressions": true,
+      "allowHigherOrderFunctions": true,
+      "allowTypedFunctionExpressions": true
+    }],
+
+    // Enforce no spacing for function calls.
+    "func-call-spacing": "off",
+    "@typescript-eslint/func-call-spacing": ["error", "never"],
 
     // Set indent rules.
     // https://typescript-eslint.io/rules/indent
@@ -48,13 +68,11 @@
       }
     ],
 
-    // Enforce function return types.
-    // https://typescript-eslint.io/rules/explicit-function-return-type
-    "@typescript-eslint/explicit-function-return-type": ["error", {
-      "allowExpressions": true,
-      "allowHigherOrderFunctions": true,
-      "allowTypedFunctionExpressions": true
-    }],
+
+    // Enforce keyword spacing.
+    // https://typescript-eslint.io/rules/keyword-spacing
+    "keyword-spacing": "off",
+    "@typescript-eslint/keyword-spacing": ["error"],
 
     // Enforce explicit return & argument types on exported functions & public class methods.
     // https://typescript-eslint.io/rules/explicit-module-boundary-types
@@ -107,7 +125,6 @@
       }
     ],
 
-
     // Disable using non-null assertions as they cancel the benefits of strict null-checking mode.
     // Prefer explicit null checks for safety.
     // https://typescript-eslint.io/rules/no-non-null-assertion
@@ -156,11 +173,6 @@
     "semi": "off",
     "@typescript-eslint/semi": ["error", "always"],
 
-    // Require space before blocks.
-    // https://typescript-eslint.io/rules/space-before-blocks
-    "space-before-blocks": "off",
-    "@typescript-eslint/space-before-blocks": ["error"],
-
     // Set spacing rules around functions.
     // https://typescript-eslint.io/rules/space-before-function-paren
     "space-before-function-paren": "off",
@@ -168,6 +180,10 @@
       "anonymous": "never",
       "named": "never",
       "asyncArrow": "always"
-    }]
+    }],
+
+    // Consistent spacing for type annotations.
+    // https://typescript-eslint.io/rules/type-annotation-spacing
+    "@typescript-eslint/type-annotation-spacing": ["error"]
   }
 }
