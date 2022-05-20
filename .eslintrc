@@ -124,6 +124,11 @@
       }
     ],
 
+    // Prevent unnecessary semicolons.
+    // https://typescript-eslint.io/rules/no-extra-semi
+    "no-extra-semi": "off",
+    "@typescript-eslint/no-extra-semi": "error",
+
     // Restrict use of labels and with statements.
     // https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Statements/with
     // https://eslint.org/docs/rules/no-restricted-syntax
@@ -168,6 +173,11 @@
     // https://typescript-eslint.io/rules/object-curly-spacing
     "object-curly-spacing": "off",
     "@typescript-eslint/object-curly-spacing": ["error", "always"],
+
+    // Require space before blocks.
+    // https://typescript-eslint.io/rules/space-before-blocks
+    "space-before-blocks": "off",
+    "@typescript-eslint/space-before-blocks": ["error"],
 
     // Enforce double quotes.
     // https://typescript-eslint.io/rules/quotes
