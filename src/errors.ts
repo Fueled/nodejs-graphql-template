@@ -16,7 +16,7 @@ export class ConflictError extends ApolloError {
 
 export class NotFoundError extends ApolloError {
   constructor(message: string) {
-    super(message, "NOT_FOUND");
+    super(message, "NOT_FOUNDX");
     Object.defineProperty(this, "name", { value: "NotFoundError" });
   }
 }
