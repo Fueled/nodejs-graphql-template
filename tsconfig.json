@@ -1,7 +1,7 @@
 {
   "compilerOptions": {
     "module": "commonjs",
-    "target": "es2017",
+    "target": "es2018",
     "outDir": "./dist",
     "sourceMap": true,
     "strict": true,
@@ -10,10 +10,10 @@
     "emitDecoratorMetadata": true,
     "experimentalDecorators": true,
     "esModuleInterop": true,
-    "forceConsistentCasingInFileNames": true,
+    "forceConsistentCasingInFileNames": true
   },
   "include": [
-      "src/**/*.ts"
+    "src/**/*.ts"
   ],
   "exclude": [
     "node_modules"

@@ -18,7 +18,7 @@ const server = app.listen(app.get("port"), () => {
   console.log(
     "  [Server] Server is running on " +
       `${config.http.schema}://${config.http.host}:${config.http.port}` +
-      ` in ${app.get("env")} mode.`
+      ` in ${app.get("env") as string} mode.`
   );
   console.log("  Press CTRL-C to stop\n");
 });

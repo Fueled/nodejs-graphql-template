@@ -1,4 +1,4 @@
-import {ApolloError} from "apollo-server-errors";
+import { ApolloError } from "apollo-server-errors";
 
 export class ApplicaitonError extends ApolloError {
   constructor(message: string) {
