@@ -5,8 +5,13 @@
     "ecmaVersion": 2018,
     "sourceType": "module"
   },
-  "extends": ["plugin:@typescript-eslint/recommended"],
-  "plugins": ["@typescript-eslint"],
+  "extends": [
+    "plugin:@typescript-eslint/recommended",
+    "prettier"
+  ],
+  "plugins": [
+    "@typescript-eslint"
+  ],
   "rules": {
     // Enforce T[] syntax for arrays over Array<T>.
     // https://typescript-eslint.io/rules/array-type
