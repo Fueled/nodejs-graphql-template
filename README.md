@@ -1,6 +1,6 @@
 # Fueled NodeJS GraphQL starter template
 
-This repo contains the starter template code for a NodeJS + TypeScript based GraphQL project, using [Prisma](https://prisma.io/) as the ORM and (Jest)[https://jestjs.io/] for testing.
+This repo contains the starter template code for a NodeJS + TypeScript based GraphQL project, using [Prisma](https://prisma.io/) as the ORM and [Jest](https://jestjs.io/) for testing.
 
 ## Requirements
 
@@ -115,4 +115,4 @@ The following plugin allows you to set Prettier as default code formatter as wel
 
 ## Helpful VS Code extensions
 
-- (Format Code Action)[https://marketplace.visualstudio.com/items?itemName=rohit-gohri.format-code-action&ssr=false#overview] - lets you run ESLint & Prettier in a particular order of your preference.
+- [Format Code Action](https://marketplace.visualstudio.com/items?itemName=rohit-gohri.format-code-action&ssr=false#overview) - lets you run ESLint & Prettier in a particular order of your preference.
