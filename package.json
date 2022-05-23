@@ -1,7 +1,7 @@
 {
-  "name": "fueled-graphql-starter",
+  "name": "fueled-nodejs-graphql-starter",
   "version": "0.0.1",
-  "description": "",
+  "description": "Starter template for a NodeJS + TypeScript based GraphQL project, using Apollo Server, Prisma ORM & Jest.",
   "scripts": {
     "prepare": "husky install",
     "prebuild": "rimraf dist/",

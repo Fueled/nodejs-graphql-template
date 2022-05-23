@@ -1,6 +1,6 @@
 # Fueled NodeJS GraphQL starter template
 
-This repo contains the starter template code for a NodeJS + TypeScript based GraphQL project, using [Prisma](https://prisma.io/) as the ORM and [Jest](https://jestjs.io/) for testing.
+This repo contains the starter template for a NodeJS + TypeScript based GraphQL project.
 
 ## Requirements
 
@@ -9,15 +9,16 @@ This repo contains the starter template code for a NodeJS + TypeScript based Gra
 
 ## Features
 
-- TypeScript
-- ExpressJS
-- Apollo Server
-- Jest
+- [TypeScript](https://www.typescriptlang.org/)
+- [ExpressJS](https://github.com/expressjs/express)
+- [Apollo Server](https://github.com/apollographql/apollo-server) with [apollo-server-express](https://github.com/apollographql/apollo-server/tree/main/packages/apollo-server-express) integration
+- [Prisma ORM](https://github.com/prisma/prisma) for database integration
+- [Jest](https://github.com/facebook/jest) for testing
 - Code formating & linting
-  - [ESLint](#eslint)
-  - [Prettier](https://prettier.io/)
+  - [ESLint](https://github.com/eslint/eslint) for code quality standards
+  - [Prettier](https://github.com/prettier/prettier) with [eslint-config-prettier](https://github.com/prettier/eslint-config-prettier) for auto-formatting
   - [EditorConfig](https://editorconfig.org/)
-  - [Husky](https://typicode.github.io/husky/)
+- [Husky](https://github.com/typicode/husky) for pre-commit hooks
 
 Husky is used for pre-commit hooks. It gets installed automatically via `npm i` as we have `prepare` lifecycle hook set.
 To avoid executing pre-commit scripts - append `--no-verify` flag to `git commit`.
@@ -36,13 +37,12 @@ npm run dev
 A Dockerfile is available to run the backend services in a container exposed through ports. The Docker container
 includes the hot reloading Node application, PostgresSQL database, and Redis for caching.
 
-The three services are available under the following:
+The following services are available currently:
 
 ```
-app: fueled_assignment
-  app        // Node application
-  redis      // Redis server
-  postgres   // PostgreSQL database
+app        // Node application
+redis      // Redis server
+postgres   // PostgreSQL database
 ```
 
 To build and run the Docker container, ensure you have the Docker CLI available, and optionally Docker Desktop.
