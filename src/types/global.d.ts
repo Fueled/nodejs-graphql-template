@@ -18,7 +18,7 @@ declare global {
   type Nullable<T> = T | null;
 
   /**
-   * Replace keys of type with different types.
+   * Replace the type for specified keys of a type.
    */
   type Replace<T, K extends keyof T, R> = Omit<T, K> & { [key in K]: R };
 }
