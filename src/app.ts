@@ -1,11 +1,14 @@
-import express from "express";
-import config from "./config/config";
+import fastify, { FastifyInstance } from "fastify";
+import { IncomingMessage, Server, ServerResponse } from "http";
 
 // Create Express server
-const app: express.Application = express();
+const app: FastifyInstance<Server, IncomingMessage, ServerResponse> = fastify({
+  logger: true,
+});
 
-// Express configuration
-// TODO: Is this needed?
-app.set("port", config.http.port);
+// eslint-disable-next-line @typescript-eslint/require-await
+app.get("/ping", async () => {
+  return "pong\n";
+});
 
 export default app;
