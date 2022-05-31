@@ -5,12 +5,26 @@
     "ecmaVersion": 2018,
     "sourceType": "module"
   },
+  "plugins": [
+    "@typescript-eslint"
+  ],
   "extends": [
     "plugin:@typescript-eslint/recommended",
     "prettier"
   ],
-  "plugins": [
-    "@typescript-eslint"
+  "overrides": [
+    {
+      "files": ["test/**"],
+      "plugins": ["jest"],
+      "extends": ["plugin:jest/recommended"],
+      "env": {
+        "jest/globals": true
+      }
+    }
+  ],
+  "ignorePatterns": [
+    "dist/*",
+    "coverage/*"
   ],
   "rules": {
     // Enforce T[] syntax for arrays over Array<T>.
