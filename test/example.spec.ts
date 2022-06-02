@@ -34,10 +34,12 @@ describe("a test with data source mock", () => {
   it("should return mock data", async () => {
     const data = await dbRepository.testModel.findMany();
     expect(data.length).toBe(2);
-    expect(data[0]).toStrictEqual(expect.objectContaining({
-      id: expect.any(Number),
-      foo: expect.any(String),
-    }));
+    expect(data[0]).toStrictEqual(
+      expect.objectContaining({
+        id: expect.any(Number),
+        foo: expect.any(String),
+      })
+    );
     expect(data[1]).toMatchObject({
       id: mockData[1].id,
       foo: mockData[1].foo,
