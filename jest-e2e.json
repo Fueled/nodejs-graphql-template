@@ -1,4 +1,4 @@
-export default {
+{
   "moduleFileExtensions": ["js", "json", "ts"],
   "modulePaths": ["<rootDir>"],
   "rootDir": "./",
@@ -7,4 +7,4 @@ export default {
   "transform": {
     "^.+\\.(t|j)s$": "ts-jest"
   }
-};
+}
