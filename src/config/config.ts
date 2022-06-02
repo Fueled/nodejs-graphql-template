@@ -3,7 +3,7 @@ import getenv from "getenv";
 
 dotenv.config();
 
-type LogLevel = "debug" | "error";  // TBC...
+type LogLevel = "debug" | "error"; // TBC...
 type HttpSchema = "http" | "https";
 
 export type Config = {
