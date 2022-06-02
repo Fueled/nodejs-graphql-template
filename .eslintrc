@@ -24,7 +24,7 @@
     }
   ],
   "env": {
-    "node": true,
+    "node": true
   },
   "ignorePatterns": [
     "dist/*",
