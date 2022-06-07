@@ -1,0 +1,7 @@
+type Placeholder {
+  name: String
+}
+
+type Query {
+  placeholders: [Placeholder]
+}
