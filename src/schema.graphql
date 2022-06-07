@@ -1,7 +1,4 @@
-type Placeholder {
-  name: String
-}
-
+# A placeholder is required...
 type Query {
-  placeholders: [Placeholder]
+  hello(name: String): String!
 }
