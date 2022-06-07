@@ -65,17 +65,15 @@ describe("a GraphQL based HTTP request", () => {
         query: `query sayHello($name: String) {
           hello(name: $name)
         }`,
-        variables: { name: 'world' },
+        variables: { name: "world" },
       };
 
-      const response = await request(httpServer)
-        .post("/graphql")
-        .send(queryData);
+      const response = await request(httpServer).post("/graphql").send(queryData);
 
       expect(response.statusCode).toBe(200);
       expect(response.body.data).toEqual({
-        hello: 'Hello world!',
+        hello: "Hello world!",
       });
-  });
+    });
   });
 });
