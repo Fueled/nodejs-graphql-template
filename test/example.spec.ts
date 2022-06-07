@@ -15,7 +15,7 @@ describe("a very basic test", () => {
   });
 });
 
-describe("a test with data source mock", () => {
+describe("a test with a Prisma data source mock", () => {
   // eslint-disable-next-line
   let dbRepository: any;
 
