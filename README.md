@@ -71,6 +71,20 @@ To run a specific container only:
 docker compose up [-d] <container_name>
 ```
 
+## Testing
+
+This repository has npm commands & examples ready for:
+- Unit tests
+- E2E tests
+
+### Unit tests
+
+Unit tests should be used to test smaller fragments of code, for example, services. Database calls & HTTP calls are expcted to be mocked within unit tests. Any file within `test/` directory with a suffix of `.spec.ts` will be treated as a unit test file.
+
+### E2E tests
+
+E2E tests should be used to test API endpoints. It is expected to use actual database functionality instead of mocks. External 3rd party HTTP requests should be mocked. Any file within `test/` directory with a suffix of `.e2e-spec.ts` will be treated as an E2E test file.
+
 ## Code formatting & quality
 
 This starter template uses ESLint along side Prettier, with separated responsibilities:

@@ -1,0 +1,4 @@
+# A placeholder is required...
+type Query {
+  hello(name: String): String!
+}

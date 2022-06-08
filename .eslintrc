@@ -1,16 +1,42 @@
 {
+  "root": true,
   "parser": "@typescript-eslint/parser",
   "parserOptions": {
     "project": "./tsconfig.json",
     "ecmaVersion": 2018,
     "sourceType": "module"
   },
+  "plugins": [
+    "@typescript-eslint"
+  ],
   "extends": [
     "plugin:@typescript-eslint/recommended",
     "prettier"
   ],
-  "plugins": [
-    "@typescript-eslint"
+  "env": {
+    "node": true
+  },
+  "overrides": [
+    {
+      "files": ["test/**"],
+      "plugins": ["jest"],
+      "extends": ["plugin:jest/recommended"],
+      "env": {
+        "jest": true
+      }
+    },
+    {
+      "files": ["test/**/*.e2e-spec.ts"],
+      "rules": {
+        // We want to disable these, as they do not play well with supertest.
+        "jest/expect-expect": "off",
+        "@typescript-eslint/no-floating-promises": "off"
+      }
+    }
+  ],
+  "ignorePatterns": [
+    "dist/*",
+    "coverage/*"
   ],
   "rules": {
     // Enforce T[] syntax for arrays over Array<T>.

@@ -1,5 +1,5 @@
 import express from "express";
-import { Context } from "./types";
+import { GraphQLContext } from "./types";
 
 type ContextFnArgs = {
   req: express.Request;
@@ -7,8 +7,8 @@ type ContextFnArgs = {
 };
 
 // eslint-disable-next-line @typescript-eslint/require-await
-export default async ({ req, res }: ContextFnArgs): Promise<Context> => {
-  const context: Context = {
+export default async ({ req, res }: ContextFnArgs): Promise<GraphQLContext> => {
+  const context: GraphQLContext = {
     req,
     res,
   };
