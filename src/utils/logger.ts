@@ -1,5 +1,5 @@
+import config from "src/utils/config";
 import winston from "winston";
-import config from "./config";
 
 const options: winston.LoggerOptions = {
   transports: [

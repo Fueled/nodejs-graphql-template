@@ -4,8 +4,6 @@ import { AppConfig, AppHttpSchema } from "src/types";
 
 dotenv.config();
 
-
-
 const httpSchema = getenv("HTTP_SCHEMA", "http");
 if (!["http", "https"].includes(httpSchema)) {
   throw new Error(`Invalid HTTP schema provided - ${httpSchema}`);

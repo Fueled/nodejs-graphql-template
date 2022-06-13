@@ -1,7 +1,7 @@
 import errorHandler from "errorhandler";
 import express from "express";
 import http from "http";
-import config from "./config/config";
+import config from "./utils/config";
 import startGraphQLServer from "./graphql";
 
 async function main(): Promise<void> {
