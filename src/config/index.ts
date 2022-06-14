@@ -1,8 +1,11 @@
 import dotenv from "dotenv";
 import getenv from "getenv";
+import path from "path";
 import { AppConfig, AppHttpSchema } from "src/types";
 
-dotenv.config();
+dotenv.config({
+  path: path.resolve(process.cwd(), process.env.NODE_ENV !== "test" ? ".env" : ".env.testing"),
+});
 
 const httpSchema = getenv("HTTP_SCHEMA", "http");
 if (!["http", "https"].includes(httpSchema)) {
