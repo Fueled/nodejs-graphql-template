@@ -6,7 +6,7 @@ import { ApolloServer } from "apollo-server-express";
 import express from "express";
 import { readFileSync } from "fs";
 import http from "http";
-import config from "./utils/config";
+import config from "./config";
 import context from "./context";
 import resolvers from "./resolvers";
 
