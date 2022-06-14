@@ -14,7 +14,9 @@ if (!["http", "https"].includes(httpSchema)) {
 
 const config: AppConfig = {
   debug: getenv.bool("DEBUG", false),
-  logLevel: "error",
+  logging: {
+    level: "error",
+  },
   http: {
     host: getenv("HTTP_HOST", "localhost"),
     port: getenv.int("HTTP_PORT", 8000),

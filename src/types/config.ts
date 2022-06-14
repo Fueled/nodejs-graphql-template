@@ -3,7 +3,9 @@ export type AppHttpSchema = "http" | "https";
 
 export type AppConfig = {
   debug: boolean;
-  logLevel: AppLogLevel;
+  logging: {
+    level: AppLogLevel;
+  };
   http: {
     host: string;
     port: number;
