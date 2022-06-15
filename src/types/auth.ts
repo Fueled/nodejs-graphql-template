@@ -5,7 +5,6 @@ import jwt from "jsonwebtoken";
 // It can be adjusted as needed, depending on authentication strategy.
 export interface Authenticable {
   email: string;
-  password: string;
 }
 
 export interface JwtService {

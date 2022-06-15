@@ -29,7 +29,7 @@ The following will install all necessary packages and run the app under developm
 
 ```
 npm install
-npm run dev
+npm run start:dev
 ```
 
 ## Docker Setup
@@ -70,6 +70,14 @@ To run a specific container only:
 ```
 docker compose up [-d] <container_name>
 ```
+
+## Authentication
+
+This repository provides basic interfaces & services to allow for a JWT based authentication mechanism to be used.
+
+`JwtService` - provides methods for signing & verifying a JWT token, along with others.
+
+`Authenticable` interface - to be implemented by the auth subject (e.g. user model). Current properties (`username`) are placeholders and are to be replaced with actual properties. When using the `Authenticable`, please replace the generic type in `graphql-context.ts` with the actualy implementation for better type hinting.
 
 ## Testing
 
