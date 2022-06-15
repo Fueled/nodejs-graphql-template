@@ -1,9 +1,23 @@
 import { ApolloError } from "apollo-server-errors";
 
-export class ApplicaitonError extends ApolloError {
+export class InternalServerError extends ApolloError {
   constructor(message: string) {
-    super(message, "APPLICATION_ERROR");
-    Object.defineProperty(this, "name", { value: "ApplicationError" });
+    super(message, "INTERNAL_SERVER_ERROR");
+    Object.defineProperty(this, "name", { value: "InternalServerError" });
+  }
+}
+
+export class NotAuthenticatedError extends ApolloError {
+  constructor(message: string) {
+    super(message, "NOT_AUTHENTICATED");
+    Object.defineProperty(this, "name", { value: "NotAuthenticatedError" });
+  }
+}
+
+export class ForbiddenError extends ApolloError {
+  constructor(message: string) {
+    super(message, "FORBIDDEN");
+    Object.defineProperty(this, "name", { value: "ForbiddenError" });
   }
 }
 
@@ -16,7 +30,7 @@ export class ConflictError extends ApolloError {
 
 export class NotFoundError extends ApolloError {
   constructor(message: string) {
-    super(message, "NOT_FOUNDX");
+    super(message, "NOT_FOUND");
     Object.defineProperty(this, "name", { value: "NotFoundError" });
   }
 }

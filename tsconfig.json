@@ -13,14 +13,7 @@
     "emitDecoratorMetadata": true,
     "experimentalDecorators": true,
     "esModuleInterop": true,
-    "forceConsistentCasingInFileNames": true,
-    "paths": {
-      "src/*": ["./src/*"],
-      "test/*": ["./test/*"]
-    },
-    "plugins": [
-      { "transform": "typescript-transform-paths" },
-    ]
+    "forceConsistentCasingInFileNames": true
   },
   "exclude": ["node_modules"]
 }
