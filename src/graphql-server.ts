@@ -1,6 +1,6 @@
 import {
   ApolloServerPluginDrainHttpServer,
-  ApolloServerPluginLandingPageGraphQLPlayground
+  ApolloServerPluginLandingPageGraphQLPlayground,
 } from "apollo-server-core";
 import { ApolloServer } from "apollo-server-express";
 import express from "express";
