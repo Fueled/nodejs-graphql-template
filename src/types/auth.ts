@@ -1,4 +1,3 @@
-// import { Request } from "express";
 import jwt from "jsonwebtoken";
 
 // User object must implement Authenticable interface.
