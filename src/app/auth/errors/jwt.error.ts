@@ -1,4 +1,4 @@
-import config from "../../config";
+import config from "../../../config";
 
 export class JwtError extends Error {
   constructor(message: string) {
