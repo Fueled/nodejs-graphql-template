@@ -6,9 +6,9 @@ import { ApolloServer } from "apollo-server-express";
 import express from "express";
 import { readFileSync } from "fs";
 import http from "http";
-import config from "./config";
-import * as resolvers from "./resolvers";
-import { getGraphQLContext } from "./graphql-context";
+import config from "../config";
+import * as resolvers from "../app/resolvers";
+import { getGraphQLContext } from "./context";
 
 export async function startGraphQLServer(
   app: express.Application,

@@ -1,5 +1,5 @@
 import { ExpressContext } from "apollo-server-express";
-import { Authenticable, GraphQLContext } from "./types";
+import { Authenticable, GraphQLContext } from "../types";
 
 // TODO: Replace Authenticable with the user interface
 type Context = GraphQLContext<Authenticable>;

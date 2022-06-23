@@ -2,7 +2,7 @@ import errorHandler from "errorhandler";
 import express from "express";
 import http from "http";
 import config from "./config";
-import { startGraphQLServer } from "./graphql-server";
+import { startGraphQLServer } from "./graphql/server";
 
 async function main(): Promise<void> {
   // Create Express server
