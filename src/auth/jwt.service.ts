@@ -1,10 +1,8 @@
-import fs from "fs";
-import express from "express";
 import jwt from "jsonwebtoken";
-import { JwtService as JwtServiceInterface } from "../types";
 import { JwtError, JwtExpiredError, JwtNotBeforeError } from "./errors";
 
-export const JwtService: JwtServiceInterface = {
+// export const JwtService: JwtServiceInterface = {
+export const JwtService = {
   sign(payload: string | object | Buffer, secret: jwt.Secret, options?: jwt.SignOptions): string {
     return jwt.sign(payload, secret, options);
   },
@@ -33,17 +31,4 @@ export const JwtService: JwtServiceInterface = {
       throw err;
     }
   },
-
-  readKey(path: string): Buffer {
-    return fs.readFileSync(path);
-  },
-
-  getTokenFromRequest(req: express.Request): string | null {
-    const header = req.header("Authorization");
-    if (!header) {
-      return null;
-    }
-
-    return header.replace("Bearer ", "");
-  }
 }
