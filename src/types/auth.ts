@@ -45,11 +45,4 @@ export interface JwtService {
    * @param secret JWT secret
    */
   verify(token: string, secret: jwt.Secret): jwt.JwtPayload | string;
-
-  /**
-   * Retrieve JWT from request data.
-   *
-   * @param req Express request object
-   */
-   getTokenFromExpressRequest<T>(req: T): string | null;
 }
