@@ -2,9 +2,9 @@
   "compilerOptions": {
     "module": "commonjs",
     "target": "es2018",
-    "outDir": "./dist",
+    "baseUrl": ".",
+    "outDir": "dist",
     "sourceMap": true,
-    "baseUrl": "./",
     "strict": true,
     // This has been left in as an option as it needs to be overriden
     // in certain cases, e.g., when using NestJS.
@@ -14,10 +14,5 @@
     "experimentalDecorators": true,
     "esModuleInterop": true,
     "forceConsistentCasingInFileNames": true
-  },
-  "exclude": ["node_modules"],
-  "paths": {
-    "src/*": ["./src/*"],
-    "test/*": ["./test/*"]
   }
 }

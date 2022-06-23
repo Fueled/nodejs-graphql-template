@@ -7,10 +7,10 @@ import express from "express";
 import { readFileSync } from "fs";
 import http from "http";
 import config from "./config";
-import context from "./context";
-import resolvers from "./resolvers";
+import * as resolvers from "./resolvers";
+import { getGraphQLContext } from "./graphql-context";
 
-export default async function startGraphQLServer(
+export async function startGraphQLServer(
   app: express.Application,
   httpServer: http.Server
 ): Promise<void> {
@@ -19,7 +19,7 @@ export default async function startGraphQLServer(
   const server = new ApolloServer({
     typeDefs,
     resolvers,
-    context,
+    context: getGraphQLContext,
     plugins: [
       ApolloServerPluginLandingPageGraphQLPlayground(),
       ApolloServerPluginDrainHttpServer({ httpServer }),

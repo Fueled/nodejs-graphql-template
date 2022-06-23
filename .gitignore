@@ -108,6 +108,7 @@ coverage
 ############################
 
 .env
+.env.testing
 *.cache
 build/
 dist/
