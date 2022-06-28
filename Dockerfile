@@ -1,4 +1,4 @@
-FROM node:16-alpine as base
+FROM node:18-alpine as base
 
 WORKDIR /var/app
 
@@ -13,7 +13,7 @@ RUN npx prisma generate
 
 # Production step
 
-FROM node:16-alpine as production
+FROM node:18-alpine as production
 
 ARG NODE_ENV=production
 ENV NODE_ENV=${NODE_ENV}
