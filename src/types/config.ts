@@ -1,7 +1,6 @@
 import { Secret } from "jsonwebtoken";
 
 export type AppLogLevel = "debug" | "error"; // TBC...
-export type AppHttpSchema = "http" | "https";
 
 export type AppConfig = {
   debug: boolean;
@@ -11,7 +10,6 @@ export type AppConfig = {
   http: {
     host: string;
     port: number;
-    schema: AppHttpSchema;
   };
   graphql: {
     csrfPrevention: boolean,

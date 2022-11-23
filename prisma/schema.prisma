@@ -1,10 +1,17 @@
 generator client {
   provider        = "prisma-client-js"
-  binaryTargets   = ["native", "darwin", "darwin-arm64", "debian-openssl-1.1.x"]
+  binaryTargets   = ["native"]
   previewFeatures = ["interactiveTransactions"]
 }
 
 datasource db {
   provider = "postgresql"
   url      = env("DATABASE_URL")
+}
+
+// Placeholder, please remove or replace.
+model User {
+  id    Int     @id @default(autoincrement())
+  email String  @unique
+  name  String?
 }

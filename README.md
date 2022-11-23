@@ -50,25 +50,25 @@ To build and run the Docker container, ensure you have the Docker CLI available,
 To build the Docker container:
 
 ```
-docker compose build
+docker-compose build
 ```
 
 To start the Docker container:
 
 ```
-docker compose up [-d]
+docker-compose up [-d]
 ```
 
 To stop the Docker container:
 
 ```
-docker compose down
+docker-compose down
 ```
 
 To run a specific container only:
 
 ```
-docker compose up [-d] <container_name>
+docker-compose up [-d] <container_name>
 ```
 
 ## Authentication
