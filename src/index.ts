@@ -20,8 +20,7 @@ async function main(): Promise<void> {
   await new Promise<void>((resolve) => httpServer.listen(config.http.port, resolve));
   console.log(
     "[Server] Server is running on " +
-      `${config.http.schema}://${config.http.host}:${config.http.port}` +
-      ` in ${app.get("env") as string} mode.`
+      `http://${config.http.host}:${config.http.port} in ${app.get("env") as string} mode.`
   );
   console.log("[Server] Press CTRL-C to stop.\n");
 }
