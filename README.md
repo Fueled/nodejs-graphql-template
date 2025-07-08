@@ -1,3 +1,6 @@
+!!! warning
+> This is deprecated as it's out-dated and we have moved on to using NestJS as our goto framework for all NodeJS based projects. 
+
 # Fueled NodeJS GraphQL starter template
 
 This repo contains the starter template for a NodeJS + TypeScript based GraphQL project.
